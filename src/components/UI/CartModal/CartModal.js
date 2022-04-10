@@ -1,4 +1,4 @@
-import React, { useContext , useState } from "react";
+import React, { useContext, useState } from "react";
 import CartToggleContext from "../../Header+Cart/CartToggleContext/CartToggleContext";
 import classes from "./CartModal.module.css";
 import Card from "../Card/Card";
@@ -10,17 +10,25 @@ const CartModal = (props) => {
   const cartctx = useContext(CartToggleContext);
   const CartList = foodctx.FoodList;
 
-  const [finalCost, setFinalCost] = useState(0);
-  
+  const [finalCost, setFinalCost] = useState(() => {
+    // total cost
+    var startCost = 0;
+    // loop thru list and multiply price by quantity
+    for (let i in CartList) {
+      startCost += +(CartList[i].Price * CartList[i].Quantity);
+    }
+    return startCost;
+  });
+
   // when there is a quantity change event, then we set a new Final Cost
   const TotalCostChangeHandler = (CartList) => {
     var cost = 0;
-    // loop thru list and multiply pric by quantity
+    // loop thru list and multiply pricw by quantity
     for (let i in CartList) {
       cost += +(CartList[i].Price * CartList[i].Quantity);
     }
     setFinalCost(cost);
-  }
+  };
 
   // Order Button Handler, does nothing so far
   const OrderClicked = () => {
