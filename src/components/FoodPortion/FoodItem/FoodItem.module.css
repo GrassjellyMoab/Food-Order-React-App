@@ -1,0 +1,63 @@
+.item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem;
+    border-bottom: solid rgb(230, 227, 227);
+    padding:2rem;
+}
+
+.item .description {
+    display: flex;
+    flex-direction: column;
+}
+
+.item i {
+    font-weight: lighter;
+    color: rgb(57, 56, 56);
+}
+
+.item h3 {
+    margin: 0rem;
+}
+
+.item h4 {
+    margin: 0rem;
+    color: rgb(146, 115, 79)
+}
+
+
+.item .input {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+}
+
+.item .input input {
+    width: 3rem;
+    border: transparent;
+    border: solid 1px rgb(228, 226, 226);
+    border-radius: 4px;
+}
+
+.item .input span {
+    font-weight: bolder;
+}
+
+
+.item .button {
+    font-size: 1rem;
+    width: 7.5rem;
+    background-color: #752e12;
+    color: white;
+    padding: 0.4rem;
+    border-radius: 12px;
+    border: transparent;
+    margin-top: 0.5rem;
+    cursor: pointer;
+}
+
+.item .button:hover {
+    background-color: #5b2712;
+    box-shadow: 0 0 3px 1px #f4ac90 ;
+}
