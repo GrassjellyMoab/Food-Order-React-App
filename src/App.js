@@ -1,16 +1,13 @@
-import React from 'react';
-import Header from './components/Header+Cart/Header/Header';
-import Food from './components/FoodPortion/Food/Food';
-  
-  
-  function App() {
+import react from "react";
+
+// components imported
+import Header from "./components/Header/Header";
+
+function App() {
   return (
-    <React.Fragment>
-      {/* Header for App */}
-      <Header></Header>
-      {/* Food Items */}
-      <Food></Food>
-    </React.Fragment>
+    <react.Fragment>
+      <Header />
+    </react.Fragment>
   );
 }
 
