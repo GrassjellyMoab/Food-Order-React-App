@@ -10,7 +10,7 @@ const defaultCartState = {
 // reducer dispatch function to handle state
 const cartReducer = (state, action) => {
     if (action.type === "ADD") {
-
+        console.log(action.item.amount)
     }
 
     if (action.type === "REMOVE") {
@@ -25,8 +25,8 @@ const CartContextProvider = props => {
     
 
     // update cart state (addition) with arg of item to be added including quantity
-    const addItemToCartHandler = (item) => {
-        dispatchFunction({type: "ADD", item: item})
+    const addItemToCartHandler = (obj) => {
+        dispatchFunction({type: "ADD", item: obj})
     }
 
     // remove 1 item from cart at a time base on id

@@ -9,7 +9,7 @@ const FoodItemForm = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    
+    props.AddToCart(inputRef.current.value);
   };
 
   return (
