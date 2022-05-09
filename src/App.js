@@ -1,4 +1,4 @@
-import react from "react";
+import { useState } from "react";
 import CartContextProvider from "./components/Context/CartContextProvider";
 
 // components imported
@@ -7,10 +7,22 @@ import Food from "./components/Food/Food";
 import Cart from "./components/Cart/Cart";
 
 function App() {
+  // toggle open or close cart
+  const [cartToggle, setCartToggle] = useState(false);
+
+  // open cart
+  const openCartHandler = () => {
+    setCartToggle(true);
+  };
+  // close cart
+  const closeCartHandler = () => {
+    setCartToggle(false);
+  };
+
   return (
     <CartContextProvider>
-      <Cart></Cart>
-      <Header />
+      {cartToggle && <Cart closeCart={closeCartHandler}></Cart>}
+      <Header openCart={openCartHandler}/>
       <Food />
     </CartContextProvider>
   );

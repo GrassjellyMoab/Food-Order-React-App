@@ -7,6 +7,8 @@ import classes from "./FoodItem.module.css";
 
 const FoodItem = (props) => {
   const cartCtx = useContext(CartContext);
+  // toFixed(2) make sure price renders to 2 decimal places
+  const price = `$${props.price.toFixed(2)}`;
 
   const AddToCart = (amountToAdd) => {
     cartCtx.addItem({
@@ -22,7 +24,7 @@ const FoodItem = (props) => {
       <div>
         <h3>{props.name}</h3>
         <div className={classes.description}>{props.description}</div>
-        <div className={classes.price}>{props.price}</div>
+        <div className={classes.price}>{price}</div>
       </div>
       <div>
         <FoodItemForm id={props.id} AddToCart={AddToCart} />
